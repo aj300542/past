@@ -1,0 +1,269 @@
+/* === Fonts === */
+@font-face {
+    font-family: 'Nixiebold-bold';
+    src: url('fonts/Nixiebold-bold.woff2') format('woff2'),
+        url('fonts/Nixiebold-bold.woff') format('woff'),
+        url('fonts/Nixiebold-bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Nixiebold-mini';
+    src: url('fonts/Nixiebold-mini.woff2') format('woff2'),
+        url('fonts/Nixiebold-mini.woff') format('woff'),
+        url('fonts/Nixiebold-mini.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Nixiebold-slim';
+    src: url('fonts/Nixiebold-slim.woff2') format('woff2'),
+        url('fonts/Nixiebold-slim.woff') format('woff'),
+        url('fonts/Nixiebold-slim.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Nixiebold-boldbig';
+    src: url('fonts/Nixiebold-boldbig.woff2') format('woff2'),
+        url('fonts/Nixiebold-boldbig.woff') format('woff'),
+        url('fonts/Nixiebold-boldbig.ttf') format('truetype');
+}
+
+/* === Reset Scrollbar === */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* === Body === */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Nixiebold-bold', Arial, sans-serif;
+    color: #fb7c00;
+    letter-spacing: 0.5em;
+    line-height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Layout container */
+#content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    padding: 5vh 2vw 45vh 2vw;
+    /* 上、左右、下边距 */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* === Countdown Elements === */
+.countdown-Wrapper {
+    position: relative;
+    font-size: 3vw;
+    font-family: 'Nixiebold-slim';
+    color: #000;
+    -webkit-text-stroke: 0.2vh hsla(0, 0%, 0%, 0.5);
+    text-shadow:
+        0.3vh 0.3vh 0 #fb7c00,
+        /* 压痕阴影 */
+        -0.3vh -0.3vh 0 #fb7c00,
+        /* 高光线条 */
+        0 0 0.6vh rgba(255, 255, 255, 0.3);
+    /* 柔光轮廓 */
+    -webkit-text-fill-color: #000;
+}
+
+.time-Wrapper {
+    position: relative;
+    font-size: 3vw;
+    font-family: 'Nixiebold-slim';
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hue 3s linear infinite;
+    line-height: 1.2;
+}
+
+@keyframes hue {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+.countdownday,
+#countdownday {
+    position: relative;
+    font-size: 7vh;
+    font-family: 'Nixiebold-slim';
+    letter-spacing: 0.25em;
+    text-align: center;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+#countdownday {
+    color: black;
+    font-family: 'Nixiebold-bold';
+    text-shadow: 0 0 2px #ff002b, 0 0 5px #fb7c00;
+    -webkit-text-stroke: 1px #fff;
+}
+
+
+/* === Time Units === */
+.timeunit-Wrapper {
+    position: relative;
+    font-size: 2vh;
+    letter-spacing: 2.5em;
+    color: #9b9b9b;
+    z-index: 98;
+}
+
+/* === Input Section === */
+.input-Wrapper {
+    position: relative;
+    font-size: 3vh;
+    height: 3vh;
+    z-index: 99;
+}
+
+/* === Input Field Styling === */
+input {
+    color: #e4e4e4;
+    background-color: rgba(255, 140, 0, 0.685);
+    border-radius: 2vh;
+    font-size: 3vh;
+    z-index: 99;
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 3ch;
+}
+
+#year {
+    width: 5ch;
+}
+
+/* === Buttons === */
+.button {
+    position: absolute;
+    padding: 1vh;
+    font-size: 1.5vh;
+    background-color: #000;
+    color: #fb7c00;
+    cursor: pointer;
+    z-index: 99;
+}
+
+
+/* === Countdown History === */
+.countdownlist {
+    position: absolute;
+    bottom: 3vh;
+    font-size: 2vh;
+    letter-spacing: 0.5em;
+    font-family: Arial, sans-serif;
+    z-index: 99;
+}
+
+#countdownDatapass {
+    color: #929292;
+}
+#countdownDatapass div {
+    cursor: pointer;
+    font-size: 2vh;
+    margin-bottom: 1vh;
+    border-radius: 1vh;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#countdownDatapass div:hover {
+    background-color: #3f3f3f;
+    transform: scale(1.02);
+}
+.con-buttons {
+    position: fixed;
+    bottom: 33%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vh;
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+    background: darkcyan;
+}
+
+.con-buttons .button {
+    position: relative;
+    /* 取消 absolute */
+    font-size: 1.8vh;
+    padding: 0.6vh 1.2vh;
+}
+
+.shortcut-buttons {
+    position: fixed;
+    top: 25%;
+    right: 2vh;
+    /* 靠右，不用 left */
+    display: flex;
+    flex-direction: column;
+    /* 改为纵向排列 */
+    gap: 1vh;
+    z-index: 99;
+    align-items: flex-end;
+    /* 如果你想按钮内容也对齐右侧 */
+}
+
+
+.shortcut-buttons .button {
+    position: relative;
+    /* 不要 absolute，这样才能跟父容器排版 */
+    font-size: 1.8vh;
+    padding: 0.6vh 1.2vh;
+    background-color: #000;
+    color: #fb7c00;
+    cursor: pointer;
+}
+
+.ui-buttons {
+    position: fixed;
+    bottom: 37%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    z-index: 9;
+    pointer-events: auto;
+}
+
+.ui-buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fb7c00;
+    border: none;
+    padding: 1vh 2vh;
+    font-size: 1.5vh;
+    border-radius: 0.5vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ui-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

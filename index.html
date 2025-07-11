@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <link rel="shortcut icon" href="nixie.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+
+    <div id="content">
+        <div class="timeview">
+            <div class="countdown-Wrapper">
+                <h1 id="countdown">0000000000.000</h1>
+            </div>
+
+            <div class="timeunit-Wrapper">
+                y m d h m s
+            </div>
+            <div class="time-Wrapper">
+                <h2 id="time">000-00-00-00:00:00</h2>
+            </div>
+
+            <div class="input-Wrapper">
+                PAST<br>
+                <input type="number" id="year" min="-5000" max="5000" step="1">
+                <input type="number" id="month" min="1" max="12" step="1">
+                <input type="number" id="day" min="1" max="31" step="1">
+                <input type="number" id="hour" min="0" max="23" step="1">
+                <input type="number" id="minute" min="0" max="59" step="1">
+                <input type="number" id="second" min="0" max="59" step="1">
+            </div>
+            <div class="countdownday">
+                <p><span>totalDays:</span></p>
+                <h1 id="totalDays">00000</h1>
+            </div>
+        </div>
+        <div class="con-buttons">
+            <button id="startCountdown" class="button">Timecalculator</button>
+            <button id="resetCountdown" class="button">reset</button>
+        </div>
+    </div>
+    <div class="shortcut-buttons">
+        <button data-time="3600" class="button">1hour</button>
+        <button data-time="43200" class="button">12hour</button>
+        <button data-time="86400" class="button">1day</button>
+        <button data-time="604800" class="button">7day</button>
+        <button data-time="1296000" class="button">15day</button>
+        <button data-time="2592000" class="button">1month</button>
+        <button data-time="7776000" class="button">3month</button>
+        <button data-time="15552000" class="button">6month</button>
+        <button data-time="31536000" class="button">1year</button>
+        <button data-time="157680000" class="button">5year</button>
+        <button data-time="315360000" class="button">10year</button>
+        <button data-time="630720000" class="button">20year</button>
+    </div>
+
+
+    <div class="countdownlist">
+        <div id="countdownDatapass"></div>
+    </div>
+
+    <div class="ui-buttons">
+        <button id="about-button">aj300</button>
+    </div>
+
+</body>
+
+</html>
